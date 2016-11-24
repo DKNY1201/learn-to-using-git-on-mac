@@ -1,29 +1,34 @@
-# README #
+# Welcome to the PacSafe Repository
 
-Demandware PacSafe project
+The repository is for PacSafe project.
+* This is the SiteGenesis version 103.1.6 - https://bitbucket.org/demandware/sitegenesis
 
-### What is this repository for? ###
+Branches:
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+- `master` is only available for releases version.
+- `develop` is for development
+- `tags` must be specified for releases
 
-### How do I get set up? ###
+# How to use
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Preparation
+Install tools and dependencies
 
-### Contribution guidelines ###
+```
+npm install -g gulp grunt-cli phantomjs
+npm install
+```
 
-* Writing tests
-* Code review
-* Other guidelines
+## Development
+Developers must run the command during coding
 
-### Who do I talk to? ###
+```
+gulp --sourcemaps
+```
 
-* Repo owner or admin
-* Other community or team contact
+## Pre PULL-REQUEST
+Before creating a pull request developer must validate with `lint` and `test:unit` by running the `validator` and check the result
+
+```
+gulp pr-validator
+```
