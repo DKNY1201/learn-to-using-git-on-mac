@@ -35,7 +35,9 @@ var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 var eventStream = require('event-stream');
 var watching = false;
+var isCI = false;
 gulp.task('enable-watch-mode', function () {watching = true;});
+gulp.task('enable-ci-mode', function () {isCI = true;});
 gulp.task('js', function (done) {
 	function createBundler (path) {
 		var opts = {
@@ -96,10 +98,17 @@ function upload (files) {
 }
 
 var eslint = require('gulp-eslint');
+var fs = require('fs');
 gulp.task('lint', function() {
+	var formater = "compact";
+	var output = process.stdout;
+	if (isCI) {
+		formater = "junit";
+		output = fs.createWriteStream('test/reports/lint.xml');
+	}
 	return gulp.src('./**/*.js')
 		.pipe(eslint())
-		.pipe(eslint.format())
+		.pipe(eslint.format(formater,output))
 		.pipe(eslint.failAfterError());
 });
 
@@ -114,9 +123,15 @@ gulp.task('test:unit', function () {
 	var reporter = opts.reporter || 'spec';
 	var timeout = opts.timeout || 10000;
 	var suite = opts.suite || '*';
+	if (isCI) {
+		reporter = "mocha-junit-reporter"		
+	}
 	return gulp.src(['test/unit/' + suite + '/**/*.js'], {read: false})
 		.pipe(gulpMocha({
 			reporter: reporter,
+			reporterOptions: {
+		        mochaFile: 'test/reports/unit.xml'
+		    },
 			timeout: timeout
 		}));
 });
@@ -211,3 +226,7 @@ gulp.task('deploy:styleguide', ['js:styleguide', 'css:styleguide'], function () 
 	return gulp.src(['styleguide/index.html', 'styleguide/dist/**/*', 'styleguide/lib/**/*'], {base: 'styleguide'})
 		.pipe(deploy(options));
 });
+
+//test - for Bluecom
+gulp.task('pr-validator', ['test:unit', 'lint']);
+gulp.task('pr-validator-ci', ['enable-ci-mode', 'test:unit', 'lint']);
