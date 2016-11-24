@@ -125,10 +125,10 @@ gulp.task('build', ['js', 'css']);
 
 gulp.task('watch:server', function() {
     gulp.watch(['pacsafe_controllers/cartridge/**/*.{js,json,properties}',
-                    'pacsafe_core/cartridge/**/*.{isml,json,properties,xml}',
-                    'pacsafe_core/cartridge/scripts/**/*.{js,ds}',
-                    'pacsafe_core/cartridge/static/**/*.{js,css,png,gif}',
-                    'pacsafe_pipelines/cartridge/**/*.{properties,xml}'], {}, function(event) {
+                    'app_pacsafe_core/cartridge/**/*.{isml,json,properties,xml}',
+                    'app_pacsafe_core/cartridge/scripts/**/*.{js,ds}',
+                    'app_pacsafe_core/cartridge/static/**/*.{js,css,png,gif}',
+                    'app_pacsafe_pipelines/cartridge/**/*.{properties,xml}'], {}, function(event) {
                         upload([event.path]);
                     }
     );

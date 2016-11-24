@@ -39,16 +39,16 @@ module.exports = function (grunt) {
                 tasks: ['css:styleguide']
             },
             doc: {
-                files: ['doc/js/**/*', '!doc/dist/', '!doc/.tmp', 'pacsafe_core/**/*.{js,ds}', 'pacsafe_controllers/**/*.{js,ds}'],
+                files: ['doc/js/**/*', '!doc/dist/', '!doc/.tmp', 'app_pacsafe_core/**/*.{js,ds}', 'app_pacsafe_controllers/**/*.{js,ds}'],
                 tasks: ['jsdoc']
             },
             server: {
                 files: [
-                    'pacsafe_controllers/cartridge/**/*.{js,json,properties}',
-                    'pacsafe_core/cartridge/**/*.{isml,json,properties,xml}',
-                    'pacsafe_core/cartridge/scripts/**/*.{js,ds}',
-                    'pacsafe_core/cartridge/static/**/*.{js,css,png,gif}',
-                    'pacsafe_pipelines/cartridge/**/*.{properties,xml}'
+                    'app_pacsafe_controllers/cartridge/**/*.{js,json,properties}',
+                    'app_pacsafe_core/cartridge/**/*.{isml,json,properties,xml}',
+                    'app_pacsafe_core/cartridge/scripts/**/*.{js,ds}',
+                    'app_pacsafe_core/cartridge/static/**/*.{js,css,png,gif}',
+                    'app_pacsafe_pipelines/cartridge/**/*.{properties,xml}'
                 ],
                 tasks: ['dwDavUpload'],
                 options: {
@@ -169,14 +169,14 @@ module.exports = function (grunt) {
         },
         jsdoc: {
             server: {
-                src: ['pacsafe_controllers/README.md', '.'],
+                src: ['app_pacsafe_controllers/README.md', '.'],
                 options: {
                     destination: 'doc/dist/js/server',
                     configure: 'doc/js/server/conf.json'
                 }
             },
             client: {
-                src: ['pacsafe_core/cartridge/js/README.md', '.'],
+                src: ['app_pacsafe_core/cartridge/js/README.md', '.'],
                 options: {
                     destination: 'doc/dist/js/client',
                     configure: 'doc/js/client/conf.json'
@@ -197,7 +197,7 @@ module.exports = function (grunt) {
             options: {
                 authFile: './dw.json'
             },
-            src: 'pacsafe_controllers/cartridge/controllers/Product.js'
+            src: 'app_pacsafe_controllers/cartridge/controllers/Product.js'
         },
         concurrent: {
             options: {
