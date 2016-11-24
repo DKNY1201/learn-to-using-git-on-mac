@@ -4,7 +4,6 @@ node_modules
 *.swp
 *.map
 .idea/
-dw.json
 demo_data_no_hires_images.zip
 Thumbs.db
 app_pacsafe_core/cartridge/static/*/css/style.css
