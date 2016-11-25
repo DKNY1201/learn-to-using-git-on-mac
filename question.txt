@@ -1,0 +1,35 @@
+1. Warranty Registration
+- The purpose?
+- How it work?
+
+2. Anti-Theft
+- Please explain more
+
+3. Compare Product
+- Reference Samsonite for Comparision outside category
+
+4. Order Update
+- Customer can update the delivery address ? Must review again
+
+5. Instagram
+- Write BM extension
+
+6. Wordrpess Blog Integration
+- Is it same as Instagram?
+- Please explain more
+
+
+1. Transaction 
+type 1: Transaction begin, commit, rollback.
+type 2: Transaction wrap
+
+What is the difference?
+
+2. hooks.json
+What is the purpose of this file?
+
+3. Workflows
+Need more explaination
+
+4. contries.json
+I can not found this file
