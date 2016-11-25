@@ -369,7 +369,7 @@ function addBonusProductJson() {
 
                         // TODO: CommonJSify cart/UpdateProductOptionSelections.ds and import here
 
-                        var UpdateProductOptionSelections = require('app_storefront_core/cartridge/scripts/cart/UpdateProductOptionSelections');
+                        var UpdateProductOptionSelections = require('app_pacsafe_core/cartridge/scripts/cart/UpdateProductOptionSelections');
                         UpdateProductOptionSelections.update({
                             SelectedOptions: new ArrayList(productsJSON[i].options),
                             Product: childProduct

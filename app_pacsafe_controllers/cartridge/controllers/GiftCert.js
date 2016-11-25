@@ -13,7 +13,7 @@ var Money = require('dw/value/Money');
 var Resource = require('dw/web/Resource');
 var Transaction = require('dw/system/Transaction');
 var URLUtils = require('dw/web/URLUtils');
-var RateLimiter = require('app_storefront_core/cartridge/scripts/util/RateLimiter');
+var RateLimiter = require('app_pacsafe_core/cartridge/scripts/util/RateLimiter');
 
 /* Script Modules */
 var app = require('~/cartridge/scripts/app');

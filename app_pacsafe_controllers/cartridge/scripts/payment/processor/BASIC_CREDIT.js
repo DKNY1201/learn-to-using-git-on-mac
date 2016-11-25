@@ -28,7 +28,7 @@ function Handle(args) {
 
     if (creditCardStatus.error) {
 
-        var invalidatePaymentCardFormElements = require('app_storefront_core/cartridge/scripts/checkout/InvalidatePaymentCardFormElements');
+        var invalidatePaymentCardFormElements = require('app_pacsafe_core/cartridge/scripts/checkout/InvalidatePaymentCardFormElements');
         invalidatePaymentCardFormElements.invalidatePaymentCardForm(creditCardStatus, session.forms.billing.paymentMethods.creditCard);
 
         return {error: true};

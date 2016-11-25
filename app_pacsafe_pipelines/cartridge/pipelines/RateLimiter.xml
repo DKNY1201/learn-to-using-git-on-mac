@@ -13,7 +13,7 @@
         <pipelet-node custom-name="CustomLabel" pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:util/RateLimiter.js"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:util/RateLimiter.js"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="CounterLabel" key="CounterLabel"/>
         </pipelet-node>

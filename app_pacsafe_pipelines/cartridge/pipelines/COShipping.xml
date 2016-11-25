@@ -507,7 +507,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/GetApplicableShippingMethods.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/GetApplicableShippingMethods.ds"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="ApplicableShippingMethods" key="ShippingMethods"/>
@@ -535,7 +535,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/UpdateShipmentShippingMethod.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/UpdateShipmentShippingMethod.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="CurrentHttpParameterMap.shippingMethodID.stringValue" key="ShippingMethodID"/>
           <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -616,7 +616,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/GetApplicableShippingMethods.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/GetApplicableShippingMethods.ds"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="ApplicableShippingMethods" key="ShippingMethods"/>
@@ -692,7 +692,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:checkout/UpdateShipmentShippingMethod.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:checkout/UpdateShipmentShippingMethod.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
                 <key-binding alias="Method.ID" key="ShippingMethodID"/>
                 <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -726,7 +726,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:checkout/PreCalculateShipping.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:checkout/PreCalculateShipping.ds"/>
                 <key-binding alias="log" key="ScriptLog"/>
                 <key-binding alias="Basket" key="Basket"/>
                 <key-binding alias="Method" key="Method"/>
@@ -787,7 +787,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node custom-name="Restore selected shipping method." pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/UpdateShipmentShippingMethod.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/UpdateShipmentShippingMethod.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="CurrentShippingMethod.ID" key="ShippingMethodID"/>
           <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -868,7 +868,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/GetApplicableShippingMethods.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/GetApplicableShippingMethods.ds"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="ApplicableShippingMethods" key="ShippingMethods"/>
@@ -976,7 +976,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/CreateShipmentShippingAddress.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/CreateShipmentShippingAddress.ds"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="CurrentForms.singleshipping.shippingAddress" key="AddressForm"/>
           <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -1002,7 +1002,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/UpdateShipmentShippingMethod.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/UpdateShipmentShippingMethod.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="CurrentForms.singleshipping.shippingAddress.shippingMethodID.value" key="ShippingMethodID"/>
           <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -1024,7 +1024,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/ValidateCartForCheckout.js"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/ValidateCartForCheckout.js"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="BasketStatus" key="BasketStatus"/>
@@ -1070,7 +1070,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/UpdateGiftCertificateShipments.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/UpdateGiftCertificateShipments.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
         </pipelet-node>
@@ -1088,7 +1088,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/RemoveEmptyShipments.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/RemoveEmptyShipments.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
         </pipelet-node>
@@ -1362,7 +1362,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:checkout/AddAddressToAddressBook.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:checkout/AddAddressToAddressBook.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
                 <key-binding alias="CurrentCustomer.profile" key="Profile"/>
                 <key-binding alias="Basket.defaultShipment.shippingAddress" key="OrderAddress"/>
@@ -1430,7 +1430,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:checkout/GetPhysicalShipments.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:checkout/GetPhysicalShipments.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="PhysicalShipments" key="Shipments"/>
           <key-binding alias="Basket" key="Basket"/>
@@ -1507,7 +1507,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:account/addressbook/GetAddressCustomer.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:account/addressbook/GetAddressCustomer.ds"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="empty(CurrentHttpParameterMap.addressID.value)?CurrentHttpParameterMap.dwfrm_singleshipping_addressList.value:CurrentHttpParameterMap.addressID.value" key="AddressId"/>
           <key-binding alias="CurrentCustomer" key="CurrentCustomer"/>
@@ -1575,7 +1575,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:checkout/CreateShipmentShippingAddress.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:checkout/CreateShipmentShippingAddress.ds"/>
                 <key-binding alias="ScriptLog" key="ScriptLog"/>
                 <key-binding alias="CurrentForms.singleshipping.shippingAddress" key="AddressForm"/>
                 <key-binding alias="Basket.defaultShipment" key="Shipment"/>
@@ -1713,7 +1713,7 @@ This pipeline implements the logic for the default (single) shipping scenario. I
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:checkout/storepickup/InStoreShipments.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:checkout/storepickup/InStoreShipments.ds"/>
                 <key-binding alias="Basket" key="Basket"/>
                 <key-binding alias="HomeDeliveries" key="homedeliveries"/>
               </pipelet-node>

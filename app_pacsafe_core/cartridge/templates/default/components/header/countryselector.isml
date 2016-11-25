@@ -1,6 +1,6 @@
 <iscontent type="text/html" charset="UTF-8" compact="true"/>
 <isscript>
-	// Specify relative path as ~/cartridge will break this import if called from app_storefront_controllers
+	// Specify relative path as ~/cartridge will break this import if called from app_pacsafe_controllers
 	var Countries = require('../../../../scripts/util/Countries');
 	var currentCountry = Countries.getCurrent(pdict);
 	var currentLocale = pdict.CurrentRequest.locale;

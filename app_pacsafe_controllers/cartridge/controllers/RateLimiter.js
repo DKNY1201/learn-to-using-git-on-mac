@@ -8,7 +8,7 @@
 
 /* Script Modules */
 var guard = require('~/cartridge/scripts/guard');
-var rateLimiter = require('app_storefront_core/cartridge/scripts/util/RateLimiter');
+var rateLimiter = require('app_pacsafe_core/cartridge/scripts/util/RateLimiter');
 
 /*
  * @describe hides the Captcha by unsetting the session attribute

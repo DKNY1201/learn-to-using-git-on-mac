@@ -773,7 +773,7 @@ just like miniaddproduct i.e. pid, options, quantiy.</description>
       </simple-transition>
       <node>
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
-          <config-property key="ScriptFile" value="app_storefront_core:cart/ContinueShopping.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/ContinueShopping.ds"/>
           <config-property key="Transactional" value="false"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="Location" key="Location"/>
@@ -1010,7 +1010,7 @@ just like miniaddproduct i.e. pid, options, quantiy.</description>
             </simple-transition>
             <node>
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
-                <config-property key="ScriptFile" value="app_storefront_core:cart/ValidateCartForCheckout.js"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:cart/ValidateCartForCheckout.js"/>
                 <config-property key="Transactional" value="false"/>
                 <key-binding alias="null" key="ScriptLog"/>
                 <key-binding alias="Basket" key="Basket"/>
@@ -1198,7 +1198,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
                     <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                       <config-property key="Transactional" value="false"/>
                       <config-property key="OnError" value="PIPELET_ERROR"/>
-                      <config-property key="ScriptFile" value="app_storefront_core:cart/FindLineItem.ds"/>
+                      <config-property key="ScriptFile" value="app_pacsafe_core:cart/FindLineItem.ds"/>
                       <key-binding alias="log" key="ScriptLog"/>
                       <key-binding alias="(ChildProduct.isVariant() ? ChildProduct.masterProduct.ID: ChildProduct.ID)" key="pid"/>
                       <key-binding alias="FoundLineItem" key="FoundLineItem"/>
@@ -1970,7 +1970,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
       <simple-transition/>
       <node>
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
-          <config-property key="ScriptFile" value="app_storefront_core:cart/CalculateCart.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/CalculateCart.ds"/>
           <config-property key="Transactional" value="true"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
@@ -2024,7 +2024,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
       </simple-transition>
       <node>
         <pipelet-node custom-name="Validates the basket against additional conditions" pipelet-name="Script" pipelet-set-identifier="bc_api">
-          <config-property key="ScriptFile" value="app_storefront_core:cart/ValidateCartForCheckout.js"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/ValidateCartForCheckout.js"/>
           <config-property key="Transactional" value="false"/>
           <key-binding alias="null" key="ScriptLog"/>
           <key-binding alias="Basket" key="Basket"/>
@@ -2083,7 +2083,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/ParseBonusProductsJSON.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/ParseBonusProductsJSON.ds"/>
           <key-binding alias="Products" key="Products"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
         </pipelet-node>
@@ -2106,7 +2106,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/GetBonusDiscountLineItem.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/GetBonusDiscountLineItem.ds"/>
           <key-binding alias="BonusDiscountLineItem" key="BonusDiscountLineItem"/>
           <key-binding alias="CurrentHttpParameterMap.bonusDiscountLineItemUUID.stringValue" key="uuid"/>
           <key-binding alias="Basket.bonusDiscountLineItems" key="BonusDiscountLineItems"/>
@@ -2128,7 +2128,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/RemoveBonusDiscountLineItemProducts.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/RemoveBonusDiscountLineItemProducts.ds"/>
           <key-binding alias="BonusDiscountLineItem" key="bonusDiscountLineItem"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
@@ -2176,7 +2176,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="false"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:cart/UpdateProductOptionSelections.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:cart/UpdateProductOptionSelections.ds"/>
                 <key-binding alias="ProductOptionModel" key="ProductOptionModel"/>
                 <key-binding alias="new dw.util.ArrayList(product.options)" key="SelectedOptions"/>
                 <key-binding alias="Product" key="Product"/>
@@ -2366,7 +2366,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="false"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:cart/UpdateProductOptionSelections.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:cart/UpdateProductOptionSelections.ds"/>
                 <key-binding alias="ProductOptionModel" key="ProductOptionModel"/>
                 <key-binding alias="new dw.util.ArrayList(product.options)" key="SelectedOptions"/>
                 <key-binding alias="ChildProduct" key="Product"/>
@@ -2388,7 +2388,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="false"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:cart/FindLineItem.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:cart/FindLineItem.ds"/>
                 <key-binding alias="log" key="ScriptLog"/>
                 <key-binding alias="(ChildProduct.isVariant() ? ChildProduct.masterProduct.ID: ChildProduct.ID)" key="pid"/>
                 <key-binding alias="FoundLineItem" key="FoundLineItem"/>
@@ -2519,7 +2519,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/CheckForNewBonusDiscountLineItem.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/CheckForNewBonusDiscountLineItem.ds"/>
           <key-binding alias="ScriptLog" key="ScriptLog"/>
           <key-binding alias="BonusDiscountLineItems" key="NewBonusDiscountLineItems"/>
           <key-binding alias="PreviousBonusDiscountLineItems" key="PreviousBonusDiscountLineItems"/>
@@ -2575,7 +2575,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="false"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/FindLineItem.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/FindLineItem.ds"/>
           <key-binding alias="log" key="ScriptLog"/>
           <key-binding alias="null" key="pid"/>
           <key-binding alias="CurrentLineItem" key="FoundLineItem"/>
@@ -2686,7 +2686,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
           <config-property key="Transactional" value="true"/>
           <config-property key="OnError" value="PIPELET_ERROR"/>
-          <config-property key="ScriptFile" value="app_storefront_core:cart/RemoveZeroQuantityLineItems.ds"/>
+          <config-property key="ScriptFile" value="app_pacsafe_core:cart/RemoveZeroQuantityLineItems.ds"/>
           <key-binding alias="Basket" key="Basket"/>
           <key-binding alias="CurrentForms.cart" key="ShipmentsForm"/>
         </pipelet-node>
@@ -3356,7 +3356,7 @@ CurrentHttpParameterMap.childPids - comma separated list of pids of the bundled 
               <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
                 <config-property key="Transactional" value="true"/>
                 <config-property key="OnError" value="PIPELET_ERROR"/>
-                <config-property key="ScriptFile" value="app_storefront_core:cart/storepickup/CheckStoreInLineItem.ds"/>
+                <config-property key="ScriptFile" value="app_pacsafe_core:cart/storepickup/CheckStoreInLineItem.ds"/>
                 <key-binding alias="null" key="ScriptLog"/>
                 <key-binding alias="Basket" key="Basket"/>
               </pipelet-node>

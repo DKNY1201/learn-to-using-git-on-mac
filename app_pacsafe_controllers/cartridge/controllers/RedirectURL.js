@@ -53,7 +53,7 @@ function start() {
  * sitegenesis.com,,RedirectURL-Hostname,Location,http://www.sitegenesis.com/
  */
 function hostName() {
-    var Redirect = require('app_storefront_core/cartridge/scripts/util/Redirect');
+    var Redirect = require('app_pacsafe_core/cartridge/scripts/util/Redirect');
     app.getView({
         Location: Redirect.validateURL(request.httpParameterMap.Location.stringValue)
     }).render('util/redirectpermanent');

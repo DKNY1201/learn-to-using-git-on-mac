@@ -170,7 +170,7 @@ var ProfileModel = AbstractModel.extend(
          * @returns {String | null} Returns a unique address ID. If the city parameter is null, returns null.
          */
         determineUniqueAddressID: function (city) {
-            var accountUtils = require('app_storefront_core/cartridge/scripts/account/Utils');
+            var accountUtils = require('app_pacsafe_core/cartridge/scripts/account/Utils');
             return accountUtils.determineUniqueAddressID(city, this.getAddressBook());
         },
 

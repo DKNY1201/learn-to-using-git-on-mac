@@ -399,7 +399,7 @@ function editEvent() {
         },
 
         setBeforeAfterAddresses: function(form) {
-            var assignEventAddresses = require('app_storefront_core/cartridge/scripts/account/giftregistry/AssignEventAddresses');
+            var assignEventAddresses = require('app_pacsafe_core/cartridge/scripts/account/giftregistry/AssignEventAddresses');
             var productList = ProductList.get(form.object);
 
             Transaction.wrap(function () {
@@ -502,7 +502,7 @@ function confirm() {
     var productList = ProductList.get(dwProductList);
 
     Transaction.wrap(function () {
-        var assignEventAddresses = require('app_storefront_core/cartridge/scripts/account/giftregistry/AssignEventAddresses');
+        var assignEventAddresses = require('app_pacsafe_core/cartridge/scripts/account/giftregistry/AssignEventAddresses');
         var eventForm = Form.get('giftregistry.event');
         var participantForm = Form.get('giftregistry.event.participant');
 

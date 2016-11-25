@@ -9,7 +9,7 @@
 *
 */
 
-var checkoutUtils = require('app_storefront_core/cartridge/scripts/checkout/Utils.ds');
+var checkoutUtils = require('app_pacsafe_core/cartridge/scripts/checkout/Utils.ds');
 var ArrayList = require('dw/util/ArrayList');
 var UUIDUtils = require('dw/util/UUIDUtils');
 

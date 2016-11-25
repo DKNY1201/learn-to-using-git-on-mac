@@ -299,7 +299,7 @@ function includeLastVisited() {
  */
 function getBonusProducts() {
     var Cart = app.getModel('Cart');
-    var getBonusDiscountLineItemDS = require('app_storefront_core/cartridge/scripts/cart/GetBonusDiscountLineItem');
+    var getBonusDiscountLineItemDS = require('app_pacsafe_core/cartridge/scripts/cart/GetBonusDiscountLineItem');
     var currentHttpParameterMap = request.httpParameterMap;
     var bonusDiscountLineItems = Cart.get().getBonusDiscountLineItems();
     var bonusDiscountLineItem;
