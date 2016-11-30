@@ -82,7 +82,7 @@
             }
         ],*/
         "linebreak-style": [
-            2,
+            0,
             "unix"
         ],
         "max-depth": 2,
