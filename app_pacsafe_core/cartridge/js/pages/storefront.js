@@ -1,11 +1,17 @@
 'use strict';
 var dialog = require('../dialog');
 var tls = require('../tls');
+var ispopupHomePage = $("#isPopupHomePage").val();
+var href = $("#isPopupHomePage").data('href');
 
 $(function(){
-	var ispopupHomePage = $("#isPopupHomePage").val();
-	var href = $("#isPopupHomePage").data('href');
-	if(ispopupHomePage == "true"){
+	$( window ).resize(function() {
+		OpenPopupHomePage();
+	});
+	OpenPopupHomePage();
+});
+ function OpenPopupHomePage(){
+	 if(ispopupHomePage == "true"){
 		dialog.open({
             url: href,
             options: {
@@ -13,7 +19,7 @@ $(function(){
             }
         });
 	}
-})
+}
 
 
 exports.init = function () {
