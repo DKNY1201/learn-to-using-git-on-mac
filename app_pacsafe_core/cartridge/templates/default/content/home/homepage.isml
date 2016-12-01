@@ -22,7 +22,9 @@
 		<div class="home-bottom-right">
 			<isslot id="home-bottom-right" description="Bottom content below flash banner - right side" context="global" />
 		</div>
-
+		<input type="hidden" data-href="${URLUtils.url('Home-Popup')}" id="isPopupHomePage" value="${pdict.ispopupHomePage}"/>
 	</div>
-
+	<isscript>
+	
+	</isscript>
 </isdecorate>

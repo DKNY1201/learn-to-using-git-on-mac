@@ -1,4 +1,21 @@
 'use strict';
+var dialog = require('../dialog');
+var tls = require('../tls');
+
+$(function(){
+	var ispopupHomePage = $("#isPopupHomePage").val();
+	var href = $("#isPopupHomePage").data('href');
+	if(ispopupHomePage == "true"){
+		dialog.open({
+            url: href,
+            options: {
+                width : 350
+            }
+        });
+	}
+})
+
+
 exports.init = function () {
     $('#homepage-slider')
         // responsive slides
@@ -54,4 +71,4 @@ exports.init = function () {
         .jcarouselControl({
             target: '+=1'
         });
-};
+}; 
