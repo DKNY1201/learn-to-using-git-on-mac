@@ -22,7 +22,7 @@ function show() {
     require('~/cartridge/scripts/meta').update(rootFolder);
     app.getView({
     	ispopupHomePage:ispopupHomePage
-    	}).render('content/home/homepage');
+    }).render('content/home/homepage');
 }
 
 /**
@@ -103,7 +103,7 @@ function deviceLayouts() {
  */
 function popup(){
 	app.getView({
-	     ContinueURL: URLUtils.https('Login-LoginForm')
+		ContinueURL: URLUtils.https('Login-LoginForm')
 	}).render('content/home/popup_home_page');
 }
 /*
