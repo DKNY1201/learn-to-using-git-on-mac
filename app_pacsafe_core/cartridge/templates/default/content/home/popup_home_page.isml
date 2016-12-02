@@ -1,21 +1,5 @@
 <!--- TEMPLATENAME: popup-home-page.isml --->
 <isinclude template="util/modules"/>
-
-<style>
-	.ui-dialog{
-		border-top: #2c2c5f 2px solid;
-	}
-	.ui-dialog .ui-widget-header{
-		background-color: #fff;
-	}
-	.dialog-content{
-		margin-top : -10px !important;
-		border-top : 1px solid #2c2c5f;
-	}
-	.ui-dialog .ui-dialog-content{
-		padding : 0;
-	}
-</style>
 <div class="popup-subscrible">
 	<h1>Sign in</h1>
 	<isif condition="${!pdict.CurrentSession.customer.externallyAuthenticated}">

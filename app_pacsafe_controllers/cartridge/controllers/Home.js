@@ -100,7 +100,6 @@ function deviceLayouts() {
 
 /**
  * Renders the popup_home_page.isml template.
- * @FIXME remove - not responsive
  */
 function popup(){
 	app.getView({
