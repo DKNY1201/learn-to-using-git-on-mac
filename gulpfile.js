@@ -37,7 +37,7 @@ var eventStream = require('event-stream');
 var watching = false;
 var isCI = false;
 gulp.task('enable-watch-mode', function () {watching = true;});
-gulp.task('enable-ci-mode', function () {isCI = true;});
+gulp.task('enable-ci-mode', function () {isCI = true; gutil.log("Enable CI mode")});
 gulp.task('js', function (done) {
 	function createBundler (path) {
 		var opts = {
@@ -124,7 +124,7 @@ gulp.task('test:unit', function () {
 	var timeout = opts.timeout || 10000;
 	var suite = opts.suite || '*';
 	if (isCI) {
-		reporter = "mocha-junit-reporter"		
+		reporter = "mocha-junit-reporter"
 	}
 	return gulp.src(['test/unit/' + suite + '/**/*.js'], {read: false})
 		.pipe(gulpMocha({
