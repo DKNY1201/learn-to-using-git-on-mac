@@ -9,19 +9,17 @@ var URLUtils = require('dw/web/URLUtils');
 var app = require('~/cartridge/scripts/app');
 var guard = require('~/cartridge/scripts/guard');
 
-
-
 /**
  * Renders the home page.
  */
 function show() {
-	var CookieHelper = require('~/cartridge/scripts/CookieHelper');
-	var CookieHp = CookieHelper.init;
-	var ispopupHomePage = CookieHp.CheckHomePopup();
+    var CookieHelper = require('~/cartridge/scripts/CookieHelper');
+    var CookieHp = CookieHelper.init;
+    var isPopupHomePage = CookieHp.CheckHomePopup();
     var rootFolder = require('dw/content/ContentMgr').getSiteLibrary().root;
     require('~/cartridge/scripts/meta').update(rootFolder);
     app.getView({
-    	ispopupHomePage:ispopupHomePage
+        isPopupHomePage: isPopupHomePage
     }).render('content/home/homepage');
 }
 
@@ -102,9 +100,9 @@ function deviceLayouts() {
  * Renders the popup_home_page.isml template.
  */
 function popup(){
-	app.getView({
-		ContinueURL: URLUtils.https('Login-LoginForm')
-	}).render('content/home/popup_home_page');
+    app.getView({
+        ContinueURL: URLUtils.https('Login-LoginForm')
+    }).render('content/home/popup_home_page');
 }
 /*
  * Export the publicly available controller methods

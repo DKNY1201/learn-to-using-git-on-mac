@@ -1,24 +1,23 @@
 'use strict';
 var dialog = require('../dialog');
-var tls = require('../tls');
-var ispopupHomePage = $("#isPopupHomePage").val();
-var href = $("#isPopupHomePage").data('href');
-
 $(function(){
-	$( window ).resize(function() {
-		OpenPopupHomePage();
-	});
-	OpenPopupHomePage();
+    $(window).resize(function() {
+        openPopupHomePage();
+    });
+    openPopupHomePage();
 });
- function OpenPopupHomePage(){
-	 if(ispopupHomePage == "true"){
-		dialog.open({
+
+function openPopupHomePage(){
+    var isPopupHomePage = $('#isPopupHomePage').val();
+    var href = $('#isPopupHomePage').data('href');
+    if (isPopupHomePage == 'true'){
+        dialog.open({
             url: href,
             options: {
                 width : 350
             }
         });
-	}
+    }
 }
 
 
