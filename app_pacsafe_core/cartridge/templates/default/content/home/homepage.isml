@@ -24,7 +24,4 @@
 		</div>
 		<input type="hidden" data-href="${URLUtils.url('Home-Popup')}" id="isPopupHomePage" value="${pdict.isPopupHomePage}"/>
 	</div>
-	<isscript>
-	
-	</isscript>
 </isdecorate>

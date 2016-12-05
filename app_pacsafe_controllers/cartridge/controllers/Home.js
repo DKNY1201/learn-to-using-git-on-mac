@@ -13,9 +13,9 @@ var guard = require('~/cartridge/scripts/guard');
  * Renders the home page.
  */
 function show() {
-    var CookieHelper = require('~/cartridge/scripts/CookieHelper');
-    var CookieHp = CookieHelper.init;
-    var isPopupHomePage = CookieHp.CheckHomePopup();
+    var CookieHelper = require('app_pacsafe_core/cartridge/scripts/util/CookieHelper');
+    var isPopupHomePage = CookieHelper.CheckHomePopup();
+    //var isPopupHomePage = CookieHp.CheckHomePopup();
     var rootFolder = require('dw/content/ContentMgr').getSiteLibrary().root;
     require('~/cartridge/scripts/meta').update(rootFolder);
     app.getView({
