@@ -1,9 +1,10 @@
 'use strict';
 var System = require('dw/system');
 var Cookie = require('dw/web/Cookie');
+var Resource = require('dw/web/Resource');
 //var second = 20;
 var cookieForPopupHomePage = {
-    key: 'HomePopup',
+    key: Resource.msg('homepage.key.popup', 'content', null),
     value: ''
 			}
 
