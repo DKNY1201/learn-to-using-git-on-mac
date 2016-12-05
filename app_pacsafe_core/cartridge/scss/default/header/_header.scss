@@ -15,7 +15,15 @@
             .logo img {
                 width: 200px;
             }
-            .shop-link,
+            .shop-link{
+                margin-right: 62px;
+                transition: all 0.3s ease-in;
+            }
+            .shop-link:hover{
+                background-color: $pacsafe-purple;
+                color: $white;
+            }
+            .shop-link, 
             .explore-link {
                 padding: 15px 50px 25px 50px;
                 font-size: 29px;
@@ -23,21 +31,23 @@
                 vertical-align: top;
             }
             .search-btn {
-                margin-left: 50px;
+                margin-left: 90px;
+                margin-right: 50px;
                 background-image: url('../images/ic_search_nav.png');
                 background-size: 35px 35px;
                 background-repeat: no-repeat;
                 height: 35px;
                 width: 35px;
                 display: inline-block;
-				margin-top: -2px;
+                margin-top: -2px;
             }
         }
         .aft-nav-item:first-child {
-            margin-top: 30px;
+            margin-top: 25px;
+            text-align: right;
         }
         .aft-nav-item:nth-child(3) {
-            margin-top: 30px;
+            margin-top: 25px;
         }
     }
 }
