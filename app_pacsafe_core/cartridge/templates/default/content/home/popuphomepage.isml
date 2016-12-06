@@ -1,7 +1,7 @@
 <!--- TEMPLATENAME: popup-home-page.isml --->
 <isinclude template="util/modules"/>
 <div class="popup-subscribe">
-	<h1>${Resource.msg('global.signin','locale',null)}</h1>
+	<h1>${Resource.msg('global.signin','custom',null)}</h1>
 	<isif condition="${!pdict.CurrentSession.customer.externallyAuthenticated}">
 		<iscomment> <p>${Resource.msg('account.login.logininclude.registered','account',null)}</p> </iscomment>
 		<form action="${URLUtils.httpsContinue()}" method="post" class="clearfix" id="${pdict.CurrentForms.login.htmlName}">
@@ -49,7 +49,7 @@
 						<fieldset>
 							<div class="form-row form-row-button">
 								<button type="submit" value="${Resource.msg('global.createbutton','locale',null)}" name="${pdict.CurrentForms.login.register.htmlName}">
-									${Resource.msg('global.rigisternowbutton','locale',null)}
+									${Resource.msg('global.registernowbutton','custom',null)}
 								</button>
 							</div>
 							<input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}"/>

@@ -10,7 +10,7 @@ var cookieForPopupHomePage = {
 var CheckHomePopup = function() {
     var isCookie = true;
     var cookieHomePopup = request.httpCookies[cookieForPopupHomePage.key];
-    if (cookieHomePopup != null){
+    if (cookieHomePopup != null) {
         isCookie = false;
     } else {
         AddCookie(cookieForPopupHomePage);
@@ -18,7 +18,7 @@ var CheckHomePopup = function() {
     return isCookie;
 }
 
-function AddCookie(myObj){
+function AddCookie(myObj) {
     var maxAge = parseInt(System.Site.getCurrent().getCustomPreferenceValue('maxAgeCookie'));
     var createCookie = new Cookie(myObj.key, myObj.value);	
     createCookie.setMaxAge(maxAge);
