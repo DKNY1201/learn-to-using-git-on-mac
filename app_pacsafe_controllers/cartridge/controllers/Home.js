@@ -37,6 +37,10 @@ function includeHeaderMenu() {
     app.getView().render('components/header/headermenu');
 }
 
+function includeHeaderLibraryContent(){
+    app.getView('CustomerService').render('components/header/headerlibrarycontent');
+}
+
 /**
  * Renders customer information.
  *
@@ -104,6 +108,9 @@ exports.IncludeHeader = guard.ensure(['include'], includeHeader);
 /** Renders the category navigation and the menu to use as a remote include.
  * @see module:controllers/Home~includeHeaderMenu */
 exports.IncludeHeaderMenu = guard.ensure(['include'],includeHeaderMenu);
+/** Renders the library navigation and the menu to use as a remote include.
+ * @see module:controllers/Home~includeHeaderLibraryContent */
+exports.IncludeHeaderLibraryContent = guard.ensure(['include'],includeHeaderLibraryContent);
 /** This is designed as a remote include as it represents dynamic session information and must not be cached.
  * @see module:controllers/Home~includeHeaderCustomerInfo */
 exports.IncludeHeaderCustomerInfo = guard.ensure(['include'], includeHeaderCustomerInfo);

@@ -51,9 +51,10 @@
 			<a class="logo" href=""><img src="${URLUtils.staticURL('/images/pacsafe_logo.png')}"/></a>
 		</div>
 		<div class="aft-nav-item">
-			<a class="explore-link" href="">${Resource.msg('global.header.explore', 'locale', null)}</a>
+			<a class="explore-link" href="">${dw.system.Site.getCurrent().getCustomPreferenceValue('headerExplore')}</a>
 			<span class="search-btn"></span>
 		</div>
 	</div>
 	<isinclude url="${URLUtils.url('Home-IncludeHeaderMenu')}"/>
+	<isinclude url="${URLUtils.url('Home-IncludeHeaderLibraryContent')}"/>
 </div><!-- /header -->

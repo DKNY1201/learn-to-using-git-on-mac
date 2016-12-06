@@ -125,22 +125,41 @@ function initializeEvents() {
         $(this).parent('.user-info').toggleClass('active');
     });
     
-    // Show/Hide navigation on header link hover
-    $cache.header_shop_link_cat_menu.hover(
-		function() {
-			$cache.nav_category_menu.stop().fadeIn();
-			$cache.header_shop_link.css({
-				'background-color': '#201547',
-			    'color':'#fff'
-			});
-		}, function(){
-			$cache.nav_category_menu.stop().fadeOut();
-			$cache.header_shop_link.css({
-				'background-color': '#fff',
-			    'color':'#201547'
-			});
-		}
-	);
+    // Show/Hide navigation category menu on shop link hover
+    $cache.headerShopLinkCatMenu.hover(
+        function() {
+            $cache.navCategoryMenu.stop().fadeIn();
+            $cache.headerShopLink.css({
+                'background-color': '#201547',
+                'color': '#fff'
+            });
+        },
+        function() {
+            $cache.navCategoryMenu.stop().fadeOut();
+            $cache.headerShopLink.css({
+                'background-color': '#fff',
+                'color': '#201547'
+            });
+        }
+    );
+
+    // Show/Hide navigation library menu on explore link hover
+    $cache.headerExploreLinkLibraryMenu.hover(
+        function() {
+            $cache.navLibraryMenu.stop().fadeIn();
+            $cache.headerExploreLink.css({
+                'background-color': '#201547',
+                'color': '#fff'
+            });
+        },
+        function() {
+            $cache.navLibraryMenu.stop().fadeOut();
+            $cache.headerExploreLink.css({
+                'background-color': '#fff',
+                'color': '#201547'
+            });
+        }
+    );
 }
 /**
  * @private
@@ -174,12 +193,14 @@ var $cache = {};
 
 var app = {
     init: function () {
-    	$cache = {
-    		header_shop_link_cat_menu : $('.shop-link, .menu-category'),
-    		header_shop_link: $('.shop-link'),
-    		nav_category_menu: $('.menu-category')
-    	};
-    	
+        $cache = {
+            headerShopLinkCatMenu: $('.shop-link, .menu-category.header-menu'),
+            headerShopLink: $('.shop-link'),
+            navCategoryMen: $('.menu-category.header-menu'),
+            headerExploreLinkLibraryMenu: $('.explore-link, .menu-category.header-library-content'),
+            headerExploreLink: $('.explore-link'),
+            navLibraryMenu: $('.menu-category.header-library-content')
+        };
         if (document.cookie.length === 0) {
             $('<div/>').addClass('browser-compatibility-alert').append($('<p/>').addClass('browser-error').html(Resources.COOKIES_DISABLED)).appendTo('#browser-check');
         }
