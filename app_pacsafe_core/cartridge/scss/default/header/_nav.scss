@@ -153,6 +153,7 @@ nav[role="navigation"] {
 		position: absolute;
 		z-index: 1;
         border-top: 3px solid $pacsafe-purple;
+		margin-top: -1px;
 		.level-1 li:hover & {
 			display: block;
 		}

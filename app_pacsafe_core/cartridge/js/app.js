@@ -124,6 +124,23 @@ function initializeEvents() {
         e.preventDefault();
         $(this).parent('.user-info').toggleClass('active');
     });
+    
+    // Show/Hide navigation on header link hover
+    $cache.header_shop_link_cat_menu.hover(
+		function() {
+			$cache.nav_category_menu.stop().fadeIn();
+			$cache.header_shop_link.css({
+				'background-color': '#201547',
+			    'color':'#fff'
+			});
+		}, function(){
+			$cache.nav_category_menu.stop().fadeOut();
+			$cache.header_shop_link.css({
+				'background-color': '#fff',
+			    'color':'#201547'
+			});
+		}
+	);
 }
 /**
  * @private
@@ -153,8 +170,16 @@ var pages = {
     storelocator: require('./pages/storelocator')
 };
 
+var $cache = {};
+
 var app = {
     init: function () {
+    	$cache = {
+    		header_shop_link_cat_menu : $('.shop-link, .menu-category'),
+    		header_shop_link: $('.shop-link'),
+    		nav_category_menu: $('.menu-category')
+    	};
+    	
         if (document.cookie.length === 0) {
             $('<div/>').addClass('browser-compatibility-alert').append($('<p/>').addClass('browser-error').html(Resources.COOKIES_DISABLED)).appendTo('#browser-check');
         }
