@@ -1,13 +1,11 @@
 <iscontent type="text/html" charset="UTF-8" compact="true"/>
 <isif condition="${pdict.CurrentSession.customer.anonymous || pdict.CurrentSession.customer.externallyAuthenticated}">
 	<p>${Resource.msg('global.or', 'locale', null)}</p>
-	<iscomment>
-		<isif condition="${pdict.CurrentSession.customer.anonymous}">
-			<p>${Resource.msgf('account.login.logininclude.oauthcustomersheader','account',"")}</p>
-		<iselse/>
-			<p>${Resource.msgf('account.login.logininclude.oauthcustomersheaderreturning','account',"")}</p>
-		</isif>
-	</iscomment>
+	<isif condition="${pdict.CurrentSession.customer.anonymous}">
+		<p>${Resource.msgf('account.login.logininclude.oauthcustomersheader','account',"")}</p>
+	<iselse/>
+		<p>${Resource.msgf('account.login.logininclude.oauthcustomersheaderreturning','account',"")}</p>
+	</isif>
 	
 	
 	<iscomment>Login Unsuccessful Error Message</iscomment>

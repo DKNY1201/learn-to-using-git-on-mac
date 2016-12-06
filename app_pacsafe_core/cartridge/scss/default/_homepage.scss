@@ -41,7 +41,8 @@
 		}
 	}
 }
-.popup-subscrible{
+
+.popup-subscribe {
 	max-width: 350px;
 	margin : 0 auto;
 	padding : 0 20px 20px;
@@ -52,13 +53,13 @@
     	line-height: 30px;
     	text-decoration : underline;
 	}
-	button{
+	button {
 		width: 100%;
 		border-radius : 0;
 		padding: 0.7em 2.5em;
 		text-transform: uppercase;
 	}
-	h1{
+	h1 {
 		font-weight: bold;
 		text-transform: uppercase;
 	    font-style: normal;
@@ -77,16 +78,16 @@
 		}
 		form{
 			text-align : center;
-			input[type="image"]{
+			input[type="image"] {
 				border-radius: 50%;
 			}
 		}
 	}
-	.login-box{
+	.login-box {
 		padding-top:20px;
 		border-top: 1px solid #2c2c5f;
     	margin-top: 20px;
-		h2{
+		h2 {
 			margin : 0;
 			font-style: normal;
 		    font-size: 15px;
@@ -96,17 +97,17 @@
 		}
 	}
 }
-.ui-dialog{
+.ui-dialog {
 	border-top: #2c2c5f 2px solid;
 }
-.ui-dialog .ui-widget-header{
+.ui-dialog .ui-widget-header {
 	background-color: #fff;
 }
-.dialog-content{
+.dialog-content {
 	margin-top : -10px !important;
 	border-top : 1px solid #2c2c5f;
 }
-.ui-dialog .ui-dialog-content{
+.ui-dialog .ui-dialog-content {
 	padding : 0;
 }
 

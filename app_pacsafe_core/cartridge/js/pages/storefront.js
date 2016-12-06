@@ -1,5 +1,6 @@
 'use strict';
 var dialog = require('../dialog');
+var util = require('../util');
 $(function(){
     $(window).resize(function() {
         openPopupHomePage();
@@ -8,11 +9,10 @@ $(function(){
 });
 
 function openPopupHomePage(){
-    var isPopupHomePage = $('#isPopupHomePage').val();
-    var href = $('#isPopupHomePage').data('href');
+    var isPopupHomePage = $('#isPopupHomePage').val(); // active popup home when isPopupHomePage = true
     if (isPopupHomePage == 'true'){
         dialog.open({
-            url: href,
+            url: util.appendParamToURL(Urls.homepopup),
             options: {
                 width : 350
             }
