@@ -17,7 +17,8 @@ var countries = require('./countries'),
     tooltip = require('./tooltip'),
     util = require('./util'),
     validator = require('./validator'),
-    tls = require('./tls');
+    tls = require('./tls'),
+    header = require('./header');
 
 // if jQuery has not been loaded, load from google cdn
 if (!window.jQuery) {
@@ -124,42 +125,6 @@ function initializeEvents() {
         e.preventDefault();
         $(this).parent('.user-info').toggleClass('active');
     });
-    
-    // Show/Hide navigation category menu on shop link hover
-    $cache.headerShopLinkCatMenu.hover(
-        function() {
-            $cache.navCategoryMenu.stop().fadeIn();
-            $cache.headerShopLink.css({
-                'background-color': '#201547',
-                'color': '#fff'
-            });
-        },
-        function() {
-            $cache.navCategoryMenu.stop().fadeOut();
-            $cache.headerShopLink.css({
-                'background-color': '#fff',
-                'color': '#201547'
-            });
-        }
-    );
-
-    // Show/Hide navigation library menu on explore link hover
-    $cache.headerExploreLinkLibraryMenu.hover(
-        function() {
-            $cache.navLibraryMenu.stop().fadeIn();
-            $cache.headerExploreLink.css({
-                'background-color': '#201547',
-                'color': '#fff'
-            });
-        },
-        function() {
-            $cache.navLibraryMenu.stop().fadeOut();
-            $cache.headerExploreLink.css({
-                'background-color': '#fff',
-                'color': '#201547'
-            });
-        }
-    );
 }
 /**
  * @private
@@ -189,18 +154,8 @@ var pages = {
     storelocator: require('./pages/storelocator')
 };
 
-var $cache = {};
-
 var app = {
     init: function () {
-        $cache = {
-            headerShopLinkCatMenu: $('.shop-link, .menu-category.header-menu'),
-            headerShopLink: $('.shop-link'),
-            navCategoryMen: $('.menu-category.header-menu'),
-            headerExploreLinkLibraryMenu: $('.explore-link, .menu-category.header-library-content'),
-            headerExploreLink: $('.explore-link'),
-            navLibraryMenu: $('.menu-category.header-library-content')
-        };
         if (document.cookie.length === 0) {
             $('<div/>').addClass('browser-compatibility-alert').append($('<p/>').addClass('browser-error').html(Resources.COOKIES_DISABLED)).appendTo('#browser-check');
         }
@@ -214,6 +169,7 @@ var app = {
         validator.init();
         rating.init();
         searchplaceholder.init();
+        header.init();
         // execute page specific initializations
         $.extend(page, window.pageContext);
         var ns = page.ns;

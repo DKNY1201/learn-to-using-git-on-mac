@@ -32,7 +32,7 @@ var CustomerServiceView = View.extend({
         // get the customer service folder
         var content = ContentMgr.getFolder('customer-service');
 
-        if (content) {
+        if (!empty(content)) {
             var customerServiceLinks = new LinkedHashMap();
 
             var customerServiceFolders = content.getOnlineSubFolders();
