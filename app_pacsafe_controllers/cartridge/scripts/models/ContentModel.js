@@ -118,9 +118,9 @@ ContentModel.getFolderName = function (parameter){
     if (!empty(parameter)){
         var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
         if (!empty(headerExploreFolder)){
-		    headerExploreFolderName = headerExploreFolder.getDisplayName();
-		}
-	}
+            headerExploreFolderName = headerExploreFolder.getDisplayName();
+        }
+    }
     return headerExploreFolderName;
 }
 
