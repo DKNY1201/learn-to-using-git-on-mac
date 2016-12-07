@@ -8,7 +8,7 @@
 var URLUtils = require('dw/web/URLUtils');
 var app = require('~/cartridge/scripts/app');
 var guard = require('~/cartridge/scripts/guard');
-
+var Site = require('dw/system/Site');
 /**
  * Renders the home page.
  */
@@ -28,7 +28,7 @@ function show() {
  */
 function includeHeader() {
     var Content = app.getModel('Content');
-    var headerExploreValue = dw.system.Site.getCurrent().getCustomPreferenceValue('headerExplore');
+    var headerExploreValue = Site.getCurrent().getCustomPreferenceValue('headerExplore');
     app.getView({
         libraryFolderName: Content.getFolderName(headerExploreValue)
     }).render('components/header/header');
