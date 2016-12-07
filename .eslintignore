@@ -1,0 +1,9 @@
+doc/
+./*.js
+bin/
+app_pacsafe_core/cartridge/static/
+app_pacsafe_core/cartridge/scripts/
+bc_integrationframework/
+bc_library/
+bm_integrationframework/
+node_modules/
