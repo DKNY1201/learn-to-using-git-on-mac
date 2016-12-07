@@ -5,7 +5,7 @@
  *
  * @module controllers/Home
  */
-
+var URLUtils = require('dw/web/URLUtils');
 var app = require('~/cartridge/scripts/app');
 var guard = require('~/cartridge/scripts/guard');
 
@@ -13,10 +13,13 @@ var guard = require('~/cartridge/scripts/guard');
  * Renders the home page.
  */
 function show() {
+    var CookieHelper = require('app_pacsafe_core/cartridge/scripts/util/CookieHelper');
+    var isPopupHomePage = CookieHelper.CheckHomePopup();
     var rootFolder = require('dw/content/ContentMgr').getSiteLibrary().root;
     require('~/cartridge/scripts/meta').update(rootFolder);
-
-    app.getView().render('content/home/homepage');
+    app.getView({
+        isPopupHomePage: isPopupHomePage
+    }).render('content/home/homepage');
 }
 
 /**
@@ -96,6 +99,14 @@ function deviceLayouts() {
     app.getView().render('util/devicelayouts');
 }
 
+/**
+ * Renders the popuphomepage.isml template.
+ */
+function popup(){
+    app.getView({
+        ContinueURL: URLUtils.https('Login-LoginForm')
+    }).render('content/home/popuphomepage');
+}
 /*
  * Export the publicly available controller methods
  */
@@ -129,3 +140,6 @@ exports.SetLayout = guard.ensure(['get'], setLayout);
 /** Renders the devicelayouts.isml template.
  * @see module:controllers/Home~deviceLayouts */
 exports.DeviceLayouts = guard.ensure(['get'], deviceLayouts);
+/** Renders the devicelayouts.isml template.
+ * @see module:controllers/Home~popup */
+exports.Popup = guard.ensure(['get'], popup);
