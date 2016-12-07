@@ -32,7 +32,7 @@ var CustomerServiceView = View.extend({
         // get the customer service folder
         var content = ContentMgr.getFolder('customer-service');
 
-        if (!empty(content)) {
+        if (content) {
             var customerServiceLinks = new LinkedHashMap();
 
             var customerServiceFolders = content.getOnlineSubFolders();
@@ -54,7 +54,7 @@ var CustomerServiceView = View.extend({
     getExploreLibraryContent: function() {
         var exploreHeaderValue = Site.getCurrent().getCustomPreferenceValue('headerExplore');
         var content = ContentMgr.getFolder(exploreHeaderValue);
-        if (content) {
+        if (!empty(content)) {
             var exploreLinks = new LinkedHashMap();
 
             var exploreFolders = content.getOnlineSubFolders();
