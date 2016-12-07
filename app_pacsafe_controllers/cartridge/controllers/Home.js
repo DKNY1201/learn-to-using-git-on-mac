@@ -27,12 +27,9 @@ function show() {
  * This is designed as a remote include to achieve optimal caching results for the header.
  */
 function includeHeader() {
-    var LibraryHelper = require('app_pacsafe_core/cartridge/scripts/util/LibraryHelper');
-    var exploreHeaderValue = require('dw/system/Site').getCurrent().getCustomPreferenceValue('headerExplore');
-    var libraryName = LibraryHelper.GetLibraryFolderName(exploreHeaderValue);
-	
+    var Content = app.getModel('Content');
     app.getView({
-        libraryName: libraryName
+        libraryFolderName: Content.getFolderName('headerExplore', true)
     }).render('components/header/header');
 }
 

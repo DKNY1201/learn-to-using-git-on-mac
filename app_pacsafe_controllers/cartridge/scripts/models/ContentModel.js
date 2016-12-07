@@ -6,7 +6,7 @@
  */
 
 var AbstractModel = require('./AbstractModel');
-
+var Site = require('dw/system/Site');
 /**
  * Content helper providing enhanced content functionality
  * @class module:models/ContentModel~ContentModel
@@ -95,7 +95,6 @@ var ContentModel = AbstractModel.extend(
             }
             return path;
         }
-
     });
 
 /**
@@ -114,6 +113,22 @@ ContentModel.get = function (parameter) {
     }
     return (obj !== null) ? new ContentModel(obj) : null;
 };
+
+ContentModel.getFolderName = function (parameter, isCustomPreferenceValue){
+	var headerExploreFolderName = "";
+	if(!empty(parameter)){
+		if(isCustomPreferenceValue == true)
+		{
+			parameter = Site.getCurrent().getCustomPreferenceValue(parameter);
+		}
+		
+		var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
+		if(!empty(headerExploreFolder)){
+			headerExploreFolderName = headerExploreFolder.getDisplayName();
+		}
+	}
+	return headerExploreFolderName;
+}
 
 /** The content class */
 module.exports = ContentModel;

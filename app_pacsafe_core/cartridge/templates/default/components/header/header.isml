@@ -50,7 +50,7 @@
 			<a class="logo" href=""><img src="${URLUtils.staticURL('/images/pacsafe_logo.png')}"/></a>
 		</div>
 		<div class="sub-nav-item">
-			<a class="explore-link" href="">${pdict.libraryName}</a>
+			<a class="explore-link" href="">${pdict.libraryFolderName}</a>
 			<span class="search-btn"></span>
 		</div>
 	</div>
