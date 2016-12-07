@@ -9,13 +9,12 @@ $(function(){
 });
 
 function openPopupHomePage() {
-    if (isPopupHomePage) {
+    if (window.isPopupHomePage) {
         dialog.open({
             url: util.appendParamToURL(Urls.homepopup),
             options: {
                 open: function () {
                     $('div#dialog-container').dialog('option','position', 'center' , 'collision' , 'fit');
-                    isPopupHomePage = false;
                 },
                 width: 'auto', // overcomes width:'auto' and maxWidth bug
                 maxWidth: 350,
@@ -30,24 +29,24 @@ function openPopupHomePage() {
 
 //responsive dialog 
 function fluidDialog() {
-    var $visible = $(".ui-dialog:visible");
+    var $visible = $('.ui-dialog:visible');
     // each open dialog
     $visible.each(function () {
         var $this = $(this);
-        var dialog = $this.find(".ui-dialog-content").data("ui-dialog");
+        var dialog = $this.find('.ui-dialog-content').data('ui-dialog');
         // if fluid option == true
         if (dialog.options.fluid) {
             var wWidth = $(window).width();
             // check window width against dialog width
-            if (wWidth < (parseInt(dialog.options.maxWidth) + 50))  {
+            if (wWidth < (parseInt(dialog.options.maxWidth , 10) + 50))  {
                 // keep dialog from filling entire screen
-                $this.css("max-width", "90%");
+                $this.css('max-width', '90%');
             } else {
                 // fix maxWidth bug
-                $this.css("max-width", dialog.options.maxWidth + "px");
+                $this.css('max-width', dialog.options.maxWidth + 'px');
             }
             //reposition dialog
-            dialog.option("position", dialog.options.position);
+            dialog.option('position', dialog.options.position);
         }
     });
 }
