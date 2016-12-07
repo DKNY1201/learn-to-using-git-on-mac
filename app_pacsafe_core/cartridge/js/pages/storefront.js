@@ -1,4 +1,25 @@
 'use strict';
+var dialog = require('../dialog');
+var util = require('../util');
+$(function(){
+    $(window).resize(function() {
+        openPopupHomePage();
+    });
+    openPopupHomePage();
+});
+
+function openPopupHomePage(){
+    if (isPopupHomePage) {
+        dialog.open({
+            url: util.appendParamToURL(Urls.homepopup),
+            options: {
+                width : 350
+            }
+        });
+    }
+}
+
+
 exports.init = function () {
     $('#homepage-slider')
         // responsive slides
@@ -54,4 +75,4 @@ exports.init = function () {
         .jcarouselControl({
             target: '+=1'
         });
-};
+}; 
