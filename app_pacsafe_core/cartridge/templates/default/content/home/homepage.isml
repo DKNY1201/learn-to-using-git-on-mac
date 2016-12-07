@@ -2,7 +2,7 @@
 <iscache type="relative" hour="24"/>
 <isdecorate template="content/home/pt_storefront">
 <script>
-	var isPopupHomePage = '${pdict.isPopupHomePage}';
+	var isPopupHomePage = ${pdict.isPopupHomePage};
 </script>
 <iscomment>this is the template rendering the homepage</iscomment>
 <!-- +1.888.553.XXXX --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demadware customers can remove this.-->
