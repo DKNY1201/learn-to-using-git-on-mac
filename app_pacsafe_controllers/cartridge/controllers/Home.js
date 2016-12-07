@@ -28,8 +28,9 @@ function show() {
  */
 function includeHeader() {
     var Content = app.getModel('Content');
+    var headerExploreValue = dw.system.Site.getCurrent().getCustomPreferenceValue('headerExplore');
     app.getView({
-        libraryFolderName: Content.getFolderName('headerExplore', true)
+        libraryFolderName: Content.getFolderName(headerExploreValue)
     }).render('components/header/header');
 }
 

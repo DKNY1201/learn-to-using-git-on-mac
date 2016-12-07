@@ -6,7 +6,6 @@
  */
 
 var AbstractModel = require('./AbstractModel');
-var Site = require('dw/system/Site');
 /**
  * Content helper providing enhanced content functionality
  * @class module:models/ContentModel~ContentModel
@@ -114,14 +113,9 @@ ContentModel.get = function (parameter) {
     return (obj !== null) ? new ContentModel(obj) : null;
 };
 
-ContentModel.getFolderName = function (parameter, isCustomPreferenceValue){
+ContentModel.getFolderName = function (parameter){
 	var headerExploreFolderName = '';
 	if (!empty(parameter)){
-		if (isCustomPreferenceValue == true)
-		{
-			parameter = Site.getCurrent().getCustomPreferenceValue(parameter);
-		}
-		
 		var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
 		if (!empty(headerExploreFolder)){
 			headerExploreFolderName = headerExploreFolder.getDisplayName();
