@@ -19,7 +19,7 @@ var CheckHomePopup = function() {
 }
 
 function AddCookie(myObj) {
-    var maxAge = parseInt(System.Site.getCurrent().getCustomPreferenceValue('maxAgeCookie'));
+    var maxAge = parseInt(System.Site.getCurrent().getCustomPreferenceValue('homePageMaxAgeCookie'));
     var createCookie = new Cookie(myObj.key, myObj.value);	
     createCookie.setMaxAge(maxAge);
     response.addHttpCookie(createCookie);

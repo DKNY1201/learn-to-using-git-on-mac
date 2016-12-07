@@ -3,20 +3,52 @@ var dialog = require('../dialog');
 var util = require('../util');
 $(function(){
     $(window).resize(function() {
-        openPopupHomePage();
+        fluidDialog();
     });
     openPopupHomePage();
 });
 
-function openPopupHomePage(){
-    if (isPopupHomePage) {
+function openPopupHomePage() {
+    if (window.isPopupHomePage) {
         dialog.open({
             url: util.appendParamToURL(Urls.homepopup),
             options: {
-                width : 350
+                open: function () {
+                    $('div#dialog-container').dialog('option','position', 'center' , 'collision' , 'fit');
+                },
+                width: 'auto', // overcomes width:'auto' and maxWidth bug
+                maxWidth: 350,
+                height: 'auto',
+                modal: true,
+                fluid: true, //new option
+                resizable: false
             }
         });
     }
+}
+
+//responsive dialog 
+function fluidDialog() {
+    var $visible = $('.ui-dialog:visible');
+    // each open dialog
+    $visible.each(function () {
+        var $this = $(this);
+        var dialog = $this.find('.ui-dialog-content').data('ui-dialog');
+        // if fluid option == true
+        if (dialog.options.fluid) {
+            var wWidth = $(window).width();
+            // check window width against dialog width
+            if (wWidth < (parseInt(dialog.options.maxWidth , 10) + 50))  {
+                // keep dialog from filling entire screen
+                $this.css('max-width', '90%');
+            } else {
+                // fix maxWidth bug
+                $this.css('max-width', dialog.options.maxWidth + 'px');
+            }
+            //reposition dialog
+            dialog.option('position', dialog.options.position);
+        }
+    });
 }
 
 
