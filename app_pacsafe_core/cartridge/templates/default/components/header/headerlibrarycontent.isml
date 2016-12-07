@@ -1,0 +1,15 @@
+<!--- TEMPLATENAME: headerlibrarycontent.isml --->
+<isif condition="${!empty(pdict.ExploreLinks)}">
+	<ul class="menu-category header-library-content level-1">
+		<isloop items="${pdict.ExploreLinks.keySet()}" var="links">	
+			<iscomment> Loop Through Explore Libraries </iscomment>
+			<isloop items="${pdict.ExploreLinks.get(links)}" var="ContentAsset" status="loopcounter">	
+				<li>
+					<a href="${URLUtils.url('Page-Show','cid', ContentAsset.ID)}" title="${ContentAsset.name}">
+						<isprint value="${ContentAsset.name}"/>
+					</a>
+				</li>
+			</isloop>
+		</isloop>
+	</ul>
+</isif>

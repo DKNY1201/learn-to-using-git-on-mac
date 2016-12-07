@@ -7,6 +7,7 @@
 <isset name="subCatLayout" value="${getSubCategoriesLayout(topCat)}" scope="page"/>
 <isif condition="${subCatLayout.hasContent}">
 	<div class="level-2">
+		<p class="menu-category-title">${topCat.getDisplayName()}</p>
 		<ul class="${subCatLayout.horizontal ? 'menu-horizontal' : 'menu-vertical'}">
 			<isloop items="${subCatLayout.subCategories}" var="subCat" status="stat">
 				<isif condition="${stat.index <= subCatLayout.maxColLength -1}">

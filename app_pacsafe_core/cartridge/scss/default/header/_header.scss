@@ -7,6 +7,51 @@
 	* {
 		box-sizing: border-box;
 	}
+    .sub-navigation {
+        @extend .clearfix;
+        .sub-nav-item {
+            width: 33.33333333%;
+            float: left;
+            text-align: center;
+            .logo img {
+                width: 200px;
+            }
+            .shop-link{
+                margin-right: 62px;
+                transition: all 0.3s ease-in;
+            }
+            .shop-link:hover{
+                background-color: $purple;
+                color: $white;
+            }
+            .shop-link, 
+            .explore-link {
+                padding: 15px 50px 25px 50px;
+                font-size: 29px;
+                text-transform: uppercase;
+                vertical-align: top;
+				transition: all 0.3s ease-in;
+            }
+            .search-btn {
+                margin-left: 90px;
+                margin-right: 50px;
+                background-image: url('../images/icon/icon_search_nav.png');
+                background-size: 35px 35px;
+                background-repeat: no-repeat;
+                height: 35px;
+                width: 35px;
+                display: inline-block;
+                margin-top: -2px;
+            }
+        }
+        .sub-nav-item:first-child {
+            margin-top: 25px;
+            text-align: right;
+        }
+        .sub-nav-item:nth-child(3) {
+            margin-top: 25px;
+        }
+    }
 }
 
 .primary-logo {

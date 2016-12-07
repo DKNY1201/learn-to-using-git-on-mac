@@ -1,3 +1,50 @@
+.menu-utility-left {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    i {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    .signin-register-text {
+        font-size: 14px;
+		color: $purple;
+    }
+}
+
+.menu-utility-right {
+    float: right;
+	color: $purple; 
+    .nav-customer-service {
+        margin-right: 22px;
+        font-size: 14px;
+        i {
+            font-weight: bold;
+        }
+        .text-customer-service {
+            margin-right: 5px;
+        }
+    }
+    .nav-mini-cart {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .nav-cart-badge {
+        position: relative;
+        i {
+            font-size: 20px;
+        }
+        .nav-cart-badge-number {
+            font-size: 11px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+    }
+}
+
 .menu-utility-user {
 	margin: 0;
 	padding: 0;

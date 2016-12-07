@@ -1,51 +1,59 @@
 <iscontent type="text/html" charset="UTF-8" compact="true"/>
-
 <iscomment>SLOT CONFIGURATION:  SLOT/ID: header-banner</iscomment>
 <div class="header-banner">
 	<isslot id="header-banner" description="Slot above the site header" context="global" />
 </div>
 <div class="top-banner" role="banner">
 	<button class="menu-toggle"><i class="menu-icon fa fa-bars"></i><span class="visually-hidden">Menu</span></button>
-	<h1 class="primary-logo">
-		<a href="${URLUtils.url('Home-Show')}" title="${Resource.msgf('global.homepage.tooltip', 'locale', null, Resource.msg('global.storename', 'locale', null), Resource.msg('global.home', 'locale', null) )}">
-			<img src="${URLUtils.staticURL('/images/logo.png')}" alt="${Resource.msg('global.storename', 'locale', null)}">
-			<span class="visually-hidden">${Resource.msg('global.storename', 'locale', null)}</span>
-		</a>
-	</h1>
+	<iscomment>
+		<h1 class="primary-logo">
+			<a href="${URLUtils.url('Home-Show')}" title="${Resource.msgf('global.homepage.tooltip', 'locale', null, Resource.msg('global.storename', 'locale', null), Resource.msg('global.home', 'locale', null) )}">
+				<img src="${URLUtils.staticURL('/images/logo.png')}" alt="${Resource.msg('global.storename', 'locale', null)}">
+				<span class="visually-hidden">${Resource.msg('global.storename', 'locale', null)}</span>
+			</a>
+		</h1>
+	 </iscomment>
 
 	<nav id="navigation" role="navigation">
 
-		<div class="header-search">
-			<isinclude template="search/simplesearch"/>
+		<iscomment>
+			<div class="header-search">
+				<isinclude template="search/simplesearch"/>
+			</div>
+		 </iscomment>
+		<div class="menu-utility-left">
+			<i class="fa fa-user"></i> <span class="signin-register-text">${Resource.msg('global.signin', 'locale', null)} / ${Resource.msg('global.register', 'locale', null)}</span>
+		</div>
+		
+		<div class="menu-utility-right">
+			<span class="nav-customer-service"><span class="text-customer-service">${Resource.msg('global.header.customerservice', 'locale', null)}</span><i class="fa fa-angle-down"></i></span>
+			<span class="fa fa-shopping-cart nav-mini-cart"></span>
+			<span class="nav-cart-badge">
+				<i class="fa fa-circle">
+					<span class="nav-cart-badge-number">4</span>
+				</i>
+			</span>
 		</div>
 
 		<iscomment>INCLUDE: category menu</iscomment>
-		<isinclude url="${URLUtils.url('Home-IncludeHeaderMenu')}"/>
-
-		<!--  utility user menu -->
-		<ul class="menu-utility-user">
-
-			<iscomment>Store Locator</iscomment>
-			<li class="stores">
-				<a href="${URLUtils.http('Stores-Find')}" title="${Resource.msg('global.header.storelocator.label', 'locale', null)}">
-					<i class="fa fa-map-marker"></i>
-					<span>${Resource.msg('global.header.storelocator', 'locale', null)}</span>
-				</a>
-			</li>
-
-			<iscomment>INCLUDE: Customer login information, login, etc. (contains personal information, do not cache)</iscomment>
-			<isinclude url="${URLUtils.url('Home-IncludeHeaderCustomerInfo')}"/>
-
-		</ul>
-
+		
+		
 		<iscomment>Country Selector</iscomment>
 		<isinclude template="components/header/countryselector"/>
 
-	</nav>
-
-	<iscomment>INCLUDE: Mini-cart, do not cache</iscomment>
-	<div id="mini-cart">
-		<isinclude url="${URLUtils.url('Cart-MiniCart')}"/>
+	</nav> 
+	<div class="sub-navigation">
+		<div class="sub-nav-item">
+			<a class="shop-link" href="">${Resource.msg('global.header.shop', 'locale', null)}</a>
+		</div>
+		<div class="sub-nav-item">
+			<a class="logo" href=""><img src="${URLUtils.staticURL('/images/pacsafe_logo.png')}"/></a>
+		</div>
+		<div class="sub-nav-item">
+			<a class="explore-link" href="">${pdict.libraryFolderName}</a>
+			<span class="search-btn"></span>
+		</div>
 	</div>
-
+	<isinclude url="${URLUtils.url('Home-IncludeHeaderMenu')}"/>
+	<isinclude url="${URLUtils.url('Home-IncludeHeaderLibraryContent')}"/>
 </div><!-- /header -->

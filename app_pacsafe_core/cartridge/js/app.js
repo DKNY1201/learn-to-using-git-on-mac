@@ -17,7 +17,8 @@ var countries = require('./countries'),
     tooltip = require('./tooltip'),
     util = require('./util'),
     validator = require('./validator'),
-    tls = require('./tls');
+    tls = require('./tls'),
+    header = require('./header');
 
 // if jQuery has not been loaded, load from google cdn
 if (!window.jQuery) {
@@ -168,6 +169,7 @@ var app = {
         validator.init();
         rating.init();
         searchplaceholder.init();
+        header.init();
         // execute page specific initializations
         $.extend(page, window.pageContext);
         var ns = page.ns;

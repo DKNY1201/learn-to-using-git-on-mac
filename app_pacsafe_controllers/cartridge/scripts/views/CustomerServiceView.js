@@ -10,6 +10,7 @@ var View = require('./View');
 /* API Includes */
 var ContentMgr = require('dw/content/ContentMgr');
 var LinkedHashMap = require('dw/util/LinkedHashMap');
+var Site = require('dw/system/Site')
 /**
  * Updates the customer navigation information.
  *
@@ -49,6 +50,28 @@ var CustomerServiceView = View.extend({
             return customerServiceLinks;
         }
     },
+    
+    getExploreLibraryContent: function() {
+        var exploreHeaderValue = Site.getCurrent().getCustomPreferenceValue('headerExplore');
+        var content = ContentMgr.getFolder(exploreHeaderValue);
+        if (!empty(content)) {
+            var exploreLinks = new LinkedHashMap();
+
+            var exploreFolders = content.getOnlineSubFolders();
+
+            for (var i = 0; i < exploreFolders.size(); i++) {
+                var folder = exploreFolders[i];
+
+                // Gets the content assets for the folder.
+                var onlineContent = folder.getOnlineContent();
+                //TODO : look at logic of this line - original line -> onlineContent && customerServiceLinks.put(folder.getDisplayName(), onlineContent);
+                exploreLinks.put(folder.getDisplayName(), onlineContent);
+            }
+
+            // Outputs the target address.
+            return exploreLinks;
+        }
+    },
 
     /**
      * Adds customer, session, request, and customer service link information to the view.
@@ -60,6 +83,7 @@ var CustomerServiceView = View.extend({
     init: function (params) {
         this._super(params);
         this.CustomerServiceLinks = this.getCustomerServiceLinks();
+        this.ExploreLinks = this.getExploreLibraryContent();
         this.ContinueURL = dw.web.URLUtils.https('CustomerService-Submit');
 
         return this;

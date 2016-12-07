@@ -8,7 +8,7 @@
 var URLUtils = require('dw/web/URLUtils');
 var app = require('~/cartridge/scripts/app');
 var guard = require('~/cartridge/scripts/guard');
-
+var Site = require('dw/system/Site');
 /**
  * Renders the home page.
  */
@@ -27,7 +27,11 @@ function show() {
  * This is designed as a remote include to achieve optimal caching results for the header.
  */
 function includeHeader() {
-    app.getView().render('components/header/header');
+    var Content = app.getModel('Content');
+    var headerExploreValue = Site.getCurrent().getCustomPreferenceValue('headerExplore');
+    app.getView({
+        libraryFolderName: Content.getFolderName(headerExploreValue)
+    }).render('components/header/header');
 }
 
 /**
@@ -38,6 +42,10 @@ function includeHeader() {
  */
 function includeHeaderMenu() {
     app.getView().render('components/header/headermenu');
+}
+
+function includeHeaderLibraryContent(){
+    app.getView('CustomerService').render('components/header/headerlibrarycontent');
 }
 
 /**
@@ -115,6 +123,9 @@ exports.IncludeHeader = guard.ensure(['include'], includeHeader);
 /** Renders the category navigation and the menu to use as a remote include.
  * @see module:controllers/Home~includeHeaderMenu */
 exports.IncludeHeaderMenu = guard.ensure(['include'],includeHeaderMenu);
+/** Renders the library navigation and the menu to use as a remote include.
+ * @see module:controllers/Home~includeHeaderLibraryContent */
+exports.IncludeHeaderLibraryContent = guard.ensure(['include'],includeHeaderLibraryContent);
 /** This is designed as a remote include as it represents dynamic session information and must not be cached.
  * @see module:controllers/Home~includeHeaderCustomerInfo */
 exports.IncludeHeaderCustomerInfo = guard.ensure(['include'], includeHeaderCustomerInfo);
