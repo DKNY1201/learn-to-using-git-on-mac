@@ -115,15 +115,15 @@ ContentModel.get = function (parameter) {
 };
 
 ContentModel.getFolderName = function (parameter, isCustomPreferenceValue){
-	var headerExploreFolderName = "";
-	if(!empty(parameter)){
-		if(isCustomPreferenceValue == true)
+	var headerExploreFolderName = '';
+	if (!empty(parameter)){
+		if (isCustomPreferenceValue == true)
 		{
 			parameter = Site.getCurrent().getCustomPreferenceValue(parameter);
 		}
 		
 		var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
-		if(!empty(headerExploreFolder)){
+		if (!empty(headerExploreFolder)){
 			headerExploreFolderName = headerExploreFolder.getDisplayName();
 		}
 	}
