@@ -114,14 +114,14 @@ ContentModel.get = function (parameter) {
 };
 
 ContentModel.getFolderName = function (parameter){
-	var headerExploreFolderName = '';
-	if (!empty(parameter)){
-		var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
-		if (!empty(headerExploreFolder)){
-			headerExploreFolderName = headerExploreFolder.getDisplayName();
+    var headerExploreFolderName = '';
+    if (!empty(parameter)){
+        var headerExploreFolder = dw.content.ContentMgr.getFolder(parameter);
+        if (!empty(headerExploreFolder)){
+		    headerExploreFolderName = headerExploreFolder.getDisplayName();
 		}
 	}
-	return headerExploreFolderName;
+    return headerExploreFolderName;
 }
 
 /** The content class */
