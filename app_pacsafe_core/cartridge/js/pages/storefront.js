@@ -8,7 +8,7 @@ $(function(){
     openPopupHomePage();
 });
 
-function openPopupHomePage(){
+function openPopupHomePage() {
     if (isPopupHomePage) {
         dialog.open({
             url: util.appendParamToURL(Urls.homepopup),
