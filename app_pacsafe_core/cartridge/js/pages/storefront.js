@@ -9,7 +9,6 @@ $(function(){
 });
 
 function openPopupHomePage(){
-    //var isPopupHomePage = $('#isPopupHomePage').val(); // active popup home when isPopupHomePage = true
     if (isPopupHomePage) {
         dialog.open({
             url: util.appendParamToURL(Urls.homepopup),
