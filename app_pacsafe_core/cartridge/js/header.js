@@ -2,7 +2,7 @@
 
 function initializeEvents() {
     // Show/Hide navigation category menu on shop link hover	
-    $cache.headerShopLinkCatMenu.on("mouseenter", function(event) {
+    $cache.headerShopLinkCatMenu.on('mouseenter', function() {
         $cache.navCategoryMenu.stop().fadeIn();
         $cache.headerShopLink.css({
             'background-color': '#201547',
@@ -10,7 +10,7 @@ function initializeEvents() {
         });
     });
 
-    $cache.headerShopLinkCatMenu.on("mouseleave", function(event) {
+    $cache.headerShopLinkCatMenu.on('mouseleave', function() {
         $cache.navCategoryMenu.stop().fadeOut();
         $cache.headerShopLink.css({
             'background-color': '#fff',
@@ -19,7 +19,7 @@ function initializeEvents() {
     });
 
     // Show/Hide navigation library menu on explore link hover
-    $cache.headerExploreLinkLibraryMenu.on("mouseenter", function(event) {
+    $cache.headerExploreLinkLibraryMenu.on('mouseenter', function() {
         $cache.navLibraryMenu.stop().fadeIn();
         $cache.headerExploreLink.css({
             'background-color': '#201547',
@@ -27,7 +27,7 @@ function initializeEvents() {
         });
     });
 
-    $cache.headerExploreLinkLibraryMenu.on("mouseleave", function(event) {
+    $cache.headerExploreLinkLibraryMenu.on('mouseleave', function() {
         $cache.navLibraryMenu.stop().fadeOut();
         $cache.headerExploreLink.css({
             'background-color': '#fff',

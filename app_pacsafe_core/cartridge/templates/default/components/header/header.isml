@@ -1,4 +1,14 @@
 <iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isscript>
+	var headerExploreValue = dw.system.Site.getCurrent().getCustomPreferenceValue('headerExplore');
+	var headerExploreFolderName = "";
+	if(!empty(headerExploreValue)){
+		var headerExploreFolder = dw.content.ContentMgr.getFolder(headerExploreValue);
+		if(!empty(headerExploreFolder)){
+			headerExploreFolderName = headerExploreFolder.getDisplayName();
+		}
+	}
+</isscript>
 
 <iscomment>SLOT CONFIGURATION:  SLOT/ID: header-banner</iscomment>
 <div class="header-banner">
@@ -43,15 +53,15 @@
 		<isinclude template="components/header/countryselector"/>
 
 	</nav> 
-	<div class="aft-navigation">
-		<div class="aft-nav-item">
+	<div class="sub-navigation">
+		<div class="sub-nav-item">
 			<a class="shop-link" href="">${Resource.msg('global.header.shop', 'locale', null)}</a>
 		</div>
-		<div class="aft-nav-item">
+		<div class="sub-nav-item">
 			<a class="logo" href=""><img src="${URLUtils.staticURL('/images/pacsafe_logo.png')}"/></a>
 		</div>
-		<div class="aft-nav-item">
-			<a class="explore-link" href="">${dw.system.Site.getCurrent().getCustomPreferenceValue('headerExplore')}</a>
+		<div class="sub-nav-item">
+			<a class="explore-link" href="">${headerExploreFolderName}</a>
 			<span class="search-btn"></span>
 		</div>
 	</div>

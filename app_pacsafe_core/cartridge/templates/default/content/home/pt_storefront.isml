@@ -29,7 +29,7 @@
 
 		<isinclude template="components/header/header"/>
 
-		<div id="main" style="height: 800px" role="main">
+		<div id="main" role="main">
 			<isreplace/>
 			<isinclude template="components/browsertoolscheck"/>
 		</div>

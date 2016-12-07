@@ -7,9 +7,9 @@
 	* {
 		box-sizing: border-box;
 	}
-    .aft-navigation {
+    .sub-navigation {
         @extend .clearfix;
-        .aft-nav-item {
+        .sub-nav-item {
             width: 33.33333333%;
             float: left;
             text-align: center;
@@ -21,7 +21,7 @@
                 transition: all 0.3s ease-in;
             }
             .shop-link:hover{
-                background-color: $pacsafe-purple;
+                background-color: $purple;
                 color: $white;
             }
             .shop-link, 
@@ -30,11 +30,12 @@
                 font-size: 29px;
                 text-transform: uppercase;
                 vertical-align: top;
+				transition: all 0.3s ease-in;
             }
             .search-btn {
                 margin-left: 90px;
                 margin-right: 50px;
-                background-image: url('../images/ic_search_nav.png');
+                background-image: url('../images/icon/icon_search_nav.png');
                 background-size: 35px 35px;
                 background-repeat: no-repeat;
                 height: 35px;
@@ -43,11 +44,11 @@
                 margin-top: -2px;
             }
         }
-        .aft-nav-item:first-child {
+        .sub-nav-item:first-child {
             margin-top: 25px;
             text-align: right;
         }
-        .aft-nav-item:nth-child(3) {
+        .sub-nav-item:nth-child(3) {
             margin-top: 25px;
         }
     }
